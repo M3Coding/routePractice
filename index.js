@@ -2,10 +2,14 @@ import express from 'express';
 import session from 'express-session'
 import axios from 'axios'
 import bcrypt from 'bcrypt'
+import birds from './birds.js'
 
 const app = express();
 const port = 3000;
+const router = express.Router();
 
+
+app.use('/birds', birds);
 app.get(('/'), (req,res) => {
     res.send('Hello World')
 })
